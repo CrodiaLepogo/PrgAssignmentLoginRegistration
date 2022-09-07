@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Page</title>
+    <style>
+.text{
+   text-align: center;
+   background-color: rgb(198, 198, 198);
+}
+
+
+.dashboard .main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  
+}
+.dashboard .description {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 3;
+}
+.dashboard-card {
+  
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgb(222, 120, 222);
+  border-radius: 10px;
+}
+@media (max-width: 992px) {
+  .dashboard {
+    display: block;
+  }
+}
+
+/* Fonts and colors */
+.dashboard h2 {
+  font-size: 20px;
+}
+.dashboard h3 {
+  color: #37B686;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.dashboard p {
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+}
+.dashboard img {
+  border-radius: 50%;
+ 
+}
+.dashboard .btn {
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  margin-top: 30px;
+  background-color: rgb(198, 198, 198);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+.dashboard .btn:hover {
+  background-color: rgb(222, 120, 222);
+  opacity: 0.7;
+}
+.main p {
+  margin-bottom: 30px;
+}
+</style>
+</head>
+<body>
+    <div class="text">
+        
+        <h1>Welcome <span th:text="${name}"><span th:next="${userLogin}"></span> </h1>
+        
+        <div class="container">
+    
+            <div class="dashboard">
+              <div class="dashboard-card main">
+                <div class="dashboard-card-content">
+                  <img src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg" alt="" width="100" class="img-circle">
+                  <h2><span th:text="${name}"></span></h2>
+                  <p>Address:<span th:text="${address}"></span></p>
+                  <p>Email:<span th:text="${email}"></span></p>
+                  <p>Course:<span th:text="${course}"></span></p>
+                  <a href="/student_Portal" class="btn btn-primary btn-lg">Return to Portal</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>

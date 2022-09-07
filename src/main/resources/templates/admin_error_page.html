@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Error Page</title>
+    <style>
+        .text{
+          text-align: center;
+          font-family: cursive;
+          color: antiquewhite;
+        }
+        a:link {
+          color: green;
+          text-decoration: none;
+        }
+        a:visited {
+          color: #add8e6;
+          text-decoration: none;
+        }
+        a:hover {
+          color: blue;
+          background-color: yellow;
+          text-decoration: underline;
+        }
+        a:active {
+          color: black;
+        }
+        body{
+            background-color: rgb(197, 153, 238);
+        }
+        </style>
+        </head>
+        <body>
+        <div class="text">
+            <h1>Oh Oh Oh!!</h1>
+            <h1>These credentials seem to be wrong!</h1>
+            <h1>Lets try again.</h1>
+            <a href="/register" text-align="center" ><b><h1>Register</h1></b></a>
+            <br>
+            <a href="/login" text-align="center"  ><b><h1>Login</h1></b></a>
+        </div>
+        </body>
+        </html>

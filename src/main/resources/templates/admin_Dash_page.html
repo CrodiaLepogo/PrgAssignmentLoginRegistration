@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Page</title>
+    <style>
+
+.text{
+   text-align: center;
+}
+
+body{
+    background-color: rgb(197, 197, 192);
+}
+
+.head{
+
+    color: #b990ca;
+}
+
+.dashboard .main {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+}
+.dashboard .description {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 3;
+}
+.dashboard-card {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 992px) {
+  .dashboard {
+    display: block;
+  }
+}
+
+
+.dashboard h2 {
+  font-size: 20px;
+}
+.dashboard h3 {
+    color: #b990ca;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.dashboard p {
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+}
+.dashboard img {
+  border-radius: 50%;
+ 
+}
+.dashboard .btn {
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #b990ca;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+.dashboard .btn:hover {
+  background: #37B686;
+  opacity: 0.7;
+}
+.main p {
+  margin-bottom: 30px;
+}
+h1{
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:-2px;
+  font-size:1.5em;
+  margin:20px 0;
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+}
+
+.blue{
+  border:2px solid #1ABC9C;
+}
+
+.blue thead{
+    background-color: #b990ca;
+}
+
+.purple{
+  border:2px solid #9B59B6;
+}
+
+.purple thead{
+  background:#9B59B6;
+}
+
+thead{
+  color:white;
+}
+
+th,td{
+  text-align:center;
+  padding:5px 0;
+}
+
+tbody tr:nth-child(even){
+  background:#ECF0F1;
+}
+
+
+
+.fixed{
+  top:0;
+  position:fixed;
+  width:auto;
+  display:none;
+  border:none;
+}
+
+.up{
+  cursor:pointer;
+}
+.update{
+    cursor:pointer;
+}
+.delete{
+    cursor:pointer;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="text">
+    <h1 class="head">Welcome Admin<span th:next="${userLogin}"></span> </h1>
+</div>
+<div class="container">
+    <div class="dashboard">
+      <div class="dashboard-card main">
+        <div class="dashboard-card-content">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg" alt="" width="100" class="img-circle">
+          <h2><span th:text="${name}"></span></h2>
+          <p>Contact:<span th:text="${contact}"></span></p>
+          <a href="/Admin_Portal" class="btn btn-primary btn-lg">Return to Portal</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div>
+      <h1 class="head">Registered Students</h1>
+      <a th:href= "@{/showStudent}" >Add Student</a>
+      <table class="blue">
+        <thead>
+          <tr>
+            <th>Student Name </th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Course </th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="students : ${ListOfStudent}">
+              <td   th:text="${students.name}"></td>
+              <td   th:text="${students.email}"></td>
+              <td   th:text="${students.Address}"></td>
+              <td   th:text="${students.Course}"></td>
+              <td><a class="update" th:href="@{/updatStudent/{id}(id=${students.id})}">update</a></td>
+              <td><a class="delete" th:href="@{/deleteStudent/{id}(id=${students.id})}">Delete</a</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>

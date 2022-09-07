@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+
+      #navbar {
+        background: white;
+        color: rgb(13, 26, 38);
+        position: fixed;
+        top: 0;
+        height: 60px;
+        line-height: 60px;
+        width: 100vw;
+        z-index: 10;
+      }
+
+      .nav-wrapper {
+        margin: auto;
+        text-align: center;
+        width: 70%;
+      
+      }
+body{
+    background-color: #878787;
+}
+    
+
+      #navbar ul {
+        display:block;
+        float: right;
+        text-align: right;
+      
+      }
+      @media (max-width: 640px) {
+        #navbar ul {
+          display: none;
+        }
+      }
+      @media (orientation: landscape) {
+        #navbar ul {
+          display: inline-block;
+        }
+      }
+
+      #navbar li {
+        display: inline-block;
+      }
+
+      #navbar li a {
+        color: rgb(13, 26, 38);
+        display: block;
+        font-size: 0.7em;
+        height: 50px;
+        letter-spacing: 1px;
+        margin: 0 20px;
+        padding: 0 4px;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+      }
+
+      #navbar li a:hover {
+        color: rgb(28, 121, 184);
+        transition: all 1s ease;
+        -webkit-transition: all 1s ease;
+      }
+
+      #navbar li a:before,
+      #navbar li a:after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        bottom: -1px;
+        background: rgb(13, 26, 38);
+      }
+
+      #navbar li a:before {
+        left: 0;
+        transition: 0.5s;
+      }
+
+      #navbar li a:after {
+        background: rgb(13, 26, 38);
+        right: 0;
+      }
+
+      #navbar li a:hover:before {
+        background: rgb(13, 26, 38);
+        width: 100%;
+        transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+      }
+
+      #navbar li a:hover:after {
+        background: transparent;
+        width: 100%;
+      }
+
+      @media (max-width: 640px) {
+        .menuIcon {
+          cursor: pointer;
+          display: block;
+          position: fixed;
+          right: 15px;
+          top: 20px;
+          height: 23px;
+          width: 27px;
+          z-index: 12;
+        }
+
+      
+        .icon-bars {
+          background: rgb(13, 26, 38);
+          position: absolute;
+          left: 1px;
+          top: 45%;
+          height: 2px;
+          width: 20px;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+        }
+
+        .icon-bars::before {
+          background: rgb(13, 26, 38);
+          content: "";
+          position: absolute;
+          left: 0;
+          top: -8px;
+          height: 2px;
+          width: 20px;
+    
+        }
+        .icon-bars.overlay {
+          background: rgb(97, 114, 129);
+          background: rgb(183, 199, 211);
+          width: 20px;
+          animation: middleBar 3s infinite 0.5s;
+          -webkit-animation: middleBar 3s infinite 0.5s;
+        }
+    
+
+      body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #878787 ;
+}
+
+.typing.animate {
+  width: 21ch;
+  border-right: 0.1em solid black;
+  font-family: monospace;
+  font-size: 2em;
+  animation: type 2.5s steps(20), writer 1s infinite alternate, delete 0.5s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22, end) 6s forwards;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+      }
+
+    </style>
+  </head>
+  <body>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <div class="logo">
+          <a></i>Student</a>
+        </div>
+        <ul id="menu">
+          <li><a href="/register">Student Register</a></li>
+          <li><a href="/login">Student Login</a></li>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+  </body>
+</html>
+      
